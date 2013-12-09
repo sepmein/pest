@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default ng-scope" role="navigation" ng-controller="pcoApp.controllers.header">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">PEST@sh</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li><a href="#/pco">PCO</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right" ng-hide="auth">
+      <li><a href="#/login">登录</a></li>
+      <li><a href="#/signup">注册</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right ng-hide" ng-show="auth">
+      <li><a href="#">{{userEmail}}</a></li>
+      <li><a href="" ng-click="logout()">登出</a></li>
+      <li>{{name}}</li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
