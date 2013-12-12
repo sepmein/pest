@@ -6,6 +6,8 @@ angular.module('pcoApp')
 			//bind to firebase database
 			angularFire(new Firebase(FBURL + '/pco/list'), $scope, 'list');
 
+			$scope.listType = typeof $scope.list;
+
 			//中英文切换
 			$scope.language = 'cn';
 			$scope.translation = function() {

@@ -1,26 +1,40 @@
-<a class="btn btn-primary btn-large" href="#/pco"><span class="glyphicon glyphicon-chevron-left"></span>PCO列表</a>
+<a value="" class="btn btn-primary btn-large" href="#/inputco"><span class="glyphicon glyphicon-chevron-left"></span>PCO列表</a>
 
 <div ng-controller="pcoApp.controllers.view">
-	<h3>{{ pco.cn.company }}</h3>
 	<form class="form-horizontal" role="form">
+		<div class="form-group"><label class="col-sm-2 control-label">公司</label>
+			<div class="col-sm-10">
+				<input ng-model="cnCompany" class="form-control"></input>
+			</div>
+		</div>
+		<div class="form-group"><label class="col-sm-2 control-label">证书号</label>
+			<div class="col-sm-10">
+				<input ng-model="_id" class="form-control"></input>
+			</div>
+		</div>
 		<div class="form-group"><label class="col-sm-2 control-label">等级</label>
 			<div class="col-sm-10">
-				<p class="form-control-static">{{ pco.grade }}</p>
+				<input ng-model="grade" class="form-control"></input>
 			</div>
 		</div>
 		<div class="form-group"><label class="col-sm-2 control-label">地址</label>
 			<div class="col-sm-10">
-				<p class="form-control-static">{{ pco.cn.address }}</p>
+				<input ng-model="cnAddress" class="form-control"></input>
 			</div>
 		</div>
 		<div class="form-group"><label class="col-sm-2 control-label">法人</label>
 			<div class="col-sm-10">
-				<p class="form-control-static">{{ pco.cn.artificialPerson }}</p>
+				<input ng-model="cnArtificialPerson" class="form-control"></input>
+			</div>
+		</div>
+		<div class="form-group"><label class="col-sm-2 control-label">有效期</label>
+			<div class="col-sm-10">
+				<input ng-model="validityDate" class="form-control"></input>
 			</div>
 		</div>
 		<div class="form-group"><label class="col-sm-2 control-label">颁证日期</label>
 			<div class="col-sm-10">
-				<p class="form-control-static">{{ pco.cn.presentationDate }}</p>
+				<input ng-model="cnPresentationDate" class="form-control"></input>
 			</div>
 		</div>
 	</form>
@@ -28,26 +42,40 @@
 	<br/>
 	<br/>
 	<br/>
-	<h3>{{ pco.en.company }}</h3>
 	<form class="form-horizontal" role="form">
+		<div class="form-group"><label class="col-sm-2 control-label">Company</label>
+			<div class="col-sm-10">
+				<input ng-model="enCompany" class="form-control"></input>
+			</div>
+		</div>
+		<div class="form-group"><label class="col-sm-2 control-label">Certificate Number</label>
+			<div class="col-sm-10">
+				<input ng-model="_id" class="form-control"></input>
+			</div>
+		</div>
 		<div class="form-group"><label class="col-sm-2 control-label">Grade</label>
 			<div class="col-sm-10">
-				<p class="form-control-static">{{ pco.grade }}</p>
+				<input ng-model="grade" class="form-control"></input>
 			</div>
 		</div>
 		<div class="form-group"><label class="col-sm-2 control-label">Address</label>
 			<div class="col-sm-10">
-				<p class="form-control-static">{{ pco.en.address }}</p>
+				<input ng-model="enAddress" class="form-control"></input>
 			</div>
 		</div>
 		<div class="form-group"><label class="col-sm-2 control-label">Artificial Person</label>
 			<div class="col-sm-10">
-				<p class="form-control-static">{{ pco.en.artificialPerson }}</p>
+				<input ng-model="enArtificialPerson" class="form-control"></input>
+			</div>
+		</div>
+		<div class="form-group"><label class="col-sm-2 control-label">Validity Date</label>
+			<div class="col-sm-10">
+				<input ng-model="validityDate" class="form-control"></input>
 			</div>
 		</div>
 		<div class="form-group"><label class="col-sm-2 control-label">Presentation Date</label>
 			<div class="col-sm-10">
-				<p class="form-control-static">{{ pco.en.presentationDate }}</p>
+				<input ng-model="enPresentationDate" class="form-control"></input>
 			</div>
 		</div>
 	</form>

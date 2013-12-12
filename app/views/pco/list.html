@@ -1,3 +1,5 @@
+<p>{{listType}}</p>
+
 <div ng-controller="pcoApp.controllers.list">
 	<!-- 
 		<div class="alert" ng-class='messageType' ng-show="isShown">{{message}}</div>
@@ -43,20 +45,22 @@
 					<a href="" ng-click=" order = '_id' ; reverse = !reverse">#</a>
 				</th>
 				<th>
-					<a href="" ng-click=" order = 'grade' ; reverse = !reverse">等级
-					</a>
+					<a href="" ng-click=" order = 'grade' ; reverse = !reverse">{{ (language==='cn')?('等级'):('Grade') }}</a>
 				</th>
 				<th>
-					<a href="" ng-click=" order = language + '.company' ; reverse = !reverse">单位</a>
+					<a href="" ng-click=" order = language + '.company' ; reverse = !reverse">{{ (language==='cn')?('单位'):('Company') }}</a>
 				</th>
 				<th>
-					<a href="" ng-click=" order = language + '.address' ; reverse = !reverse">地址</a>
+					<a href="" ng-click=" order = language + '.address' ; reverse = !reverse">{{ (language==='cn')?('地址'):('Address') }}</a>
 				</th>
 				<th>
-					<a href="" ng-click=" order = language + '.artificialPerson' ; reverse = !reverse">法人</a>
+					<a href="" ng-click=" order = language + '.artificialPerson' ; reverse = !reverse">{{ (language==='cn')?('法人'):('Artificial Person') }}</a>
 				</th>
 				<th>
-					<a href="" ng-click=" order = language + '.presentationDate' ; reverse = !reverse">颁发日期</a>
+					<a href="" ng-click=" order = language + '.presentationDate' ; reverse = !reverse">{{ (language==='cn')?('颁发日期'):('Presentation Date') }}</a>
+				</th>
+				<th>
+					<a href="" ng-click=" order = validityDate ; reverse = !reverse">{{ (language==='cn')?('有效期'):('Validation Date') }}</a>
 				</th>
 			</tr>
 		</thead>
@@ -68,6 +72,7 @@
 				<td>{{ pco[language].address }}</td>
 				<td>{{ pco[language].artificialPerson}}</td>
 				<td>{{ pco[language].presentationDate}}</td>
+				<td>{{ pco.validityDate}}</td>
 			</tr>
 		</tbody>
 	</table>	
