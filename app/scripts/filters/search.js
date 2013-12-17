@@ -6,12 +6,10 @@ angular.module('pcoApp')
 			//search type must be object
 			if (object !== null && searchingText) {
 				var result = {},
-					trimedSearchingText = searchingText.toString().trim(),
-					regexp = new RegExp(trimedSearchingText);
-
+					trimedSearchingText = searchingText.toString().trim();
 				//checking for matches
 				for (var key in object) {
-					var testResult = regexp.exec(JSON.stringify(object[key]));
+					var testResult = JSON.stringify(object[key]).match(trimedSearchingText);
 					if (testResult) {
 						result[key] = object[key];
 					}
