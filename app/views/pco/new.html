@@ -1,30 +1,5 @@
-<div ng-controller="pcoApp.controllers.view">
+<div ng-controller="pcoApp.controllers.new">
 	<a class="btn btn-primary" href="#/pco"><span class="glyphicon glyphicon-chevron-left"></span>PCO列表</a>
-
-	<!-- Button trigger modal -->
-	<button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
-		<span class="glyphicon glyphicon-trash"></span>删除
-	</button>
-	<!-- Modal -->
-	<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="myModalLabel">⚠警告</h4>
-				</div>
-				<div class="modal-body">
-					<p>你将删除的数据编号为：［{{ _id }}］，公司名：{{cnCompany}}。</p>
-					<p>该操作为不可逆，请再次确认后进行操作</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-					<button type="button" class="btn btn-danger" ng-click="delete()">删除</button>
-				</div>
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
-
 	<form class="form-horizontal" role="form">
 		<div class="form-group"><label class="col-sm-2 control-label">公司</label>
 			<div class="col-sm-10">
@@ -103,4 +78,10 @@
 			</div>
 		</div>
 	</form>
+
+	<button id="newBtn" ng-click="new()" class="btn btn-success btn-lg" data-loading-text="正在新建">{{ newBtnState }}</button>
+	<a href="#/pco/new" class="btn btn-lg" ng-show='added'>继续新建</a>
+	<a href="#/pco/{{uniquePushId}}" class="btn btn-lg" ng-show='added'>查看已新建内容</a>
+	<a href="#/pco/list" class="btn btn-lg" ng-show='added'>返回列表</a>
+
 </div>

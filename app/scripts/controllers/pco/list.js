@@ -1,12 +1,10 @@
 'use strict';
 
 angular.module('pcoApp')
-	.controller('pcoApp.controllers.list', ['$scope', 'angularFire', 'FBURL',
-		function($scope, angularFire, FBURL) {
+	.controller('pcoApp.controllers.list', ['$scope', 'angularFire', 'FireRefs',
+		function($scope, angularFire, FireRefs) {
 			//bind to firebase database
-			angularFire(new Firebase(FBURL + '/pco/list'), $scope, 'list');
-
-			$scope.listType = typeof $scope.list;
+			angularFire(FireRefs.pcoList(), $scope, 'list');
 
 			//中英文切换
 			$scope.language = 'cn';

@@ -19,6 +19,10 @@ app.config(['$routeProvider',
 				templateUrl: 'views/pco/list.html',
 				authRequired: true
 			})
+			.when('/pco/new', {
+				templateUrl: 'views/pco/new.html',
+				authRequired: true
+			})
 			.when('/pco/:index', {
 				templateUrl: 'views/pco/view.html',
 				authRequired: true
