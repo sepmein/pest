@@ -1,13 +1,12 @@
 'use strict';
 
 angular.module('pcoApp')
-	.controller('pcoApp.controllers.main', ['$scope','angularFire', 'FBURL',
-		function($scope, angularFire, FBURL) {
+	.controller('pcoApp.controllers.main', ['$scope',
+		function($scope) {
 			$scope.awesomeThings = [
 				'HTML5 Boilerplate',
 				'AngularJS',
 				'Karma'
 			];
-			angularFire(new Firebase(FBURL), $scope, 'hello');
 		}
 	]);

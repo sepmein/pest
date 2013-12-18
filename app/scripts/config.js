@@ -37,13 +37,14 @@ app.config(['$routeProvider',
 .constant('FBURL', 'https://pest.firebaseio.com')
 
 //TODO: understand angularFireAuth services
-.run(['angularFireAuth', 'FBURL', '$rootScope',
-	function(angularFireAuth, FBURL, $rootScope) {
-		angularFireAuth.initialize(new Firebase(FBURL), {
-			scope: $rootScope,
-			name: 'auth',
-			path: '/login'
+.run(['$firebaseAuth', 'FBURL', '$rootScope',
+	function($firebaseAuth, FBURL, $rootScope) {
+		$rootScope.auth = $firebaseAuth(new Firebase(FBURL), {
+			simple: true,
+			path: '/login',
+			callback : function(){
+				//null for now
+			}
 		});
-		$rootScope.FBURL = FBURL;
 	}
 ]);

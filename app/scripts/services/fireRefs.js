@@ -6,6 +6,9 @@ angular.module('pcoApp.services.fireRefs', [])
 			return {
 				pcoList: function() {
 					return new Firebase(FBURL + '/pco' + '/list');
+				},
+				pest: function(){
+					return new Firebase(FBURL);
 				}
 			};
 		}

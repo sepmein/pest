@@ -8,5 +8,6 @@ var app = angular.module('pcoApp', [
   'pcoApp.config',
   'pcoApp.services.authentication',
   'pcoApp.services.fireRefs',
+  'pcoApp.services.helpers',
   'firebase'
 ]);

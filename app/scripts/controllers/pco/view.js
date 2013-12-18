@@ -1,29 +1,31 @@
 'use strict';
 
 angular.module('pcoApp')
-	.controller('pcoApp.controllers.view', ['$scope', '$routeParams', 'angularFire', 'FireRefs', '$location' , 
-		function($scope, $routeParams, angularFire, FireRefs, $location) {
+	.controller('pcoApp.controllers.view', ['$scope', '$routeParams', '$firebase', 'FireRefs', '$location',
+		function($scope, $routeParams, $firebase, FireRefs, $location) {
 			var index = $routeParams.index;
 			var ref = FireRefs.pcoList().child(index);
-			
+
 			//binding to firebase
-			angularFire(ref.parent(), $scope, 'pcos');
-			angularFire(ref.child('_id'), $scope, '_id');
-			angularFire(ref.child('grade'), $scope, 'grade');
-			angularFire(ref.child('validityDate'), $scope, 'validityDate');
-			angularFire(ref.child('cn/address'), $scope, 'cnAddress');
-			angularFire(ref.child('cn/artificialPerson'), $scope, 'cnArtificialPerson');
-			angularFire(ref.child('cn/company'), $scope, 'cnCompany');
-			angularFire(ref.child('cn/presentationDate'), $scope, 'cnPresentationDate');
-			angularFire(ref.child('en/address'), $scope, 'enAddress');
-			angularFire(ref.child('en/artificialPerson'), $scope, 'enArtificialPerson');
-			angularFire(ref.child('en/company'), $scope, 'enCompany');
-			angularFire(ref.child('en/presentationDate'), $scope, 'enPresentationDate');
+			$firebase(ref.parent()).$bind($scope, 'pcos');
+			$firebase(ref.child('_id')).$bind($scope, '_id');
+			$firebase(ref.child('grade')).$bind($scope, 'grade');
+			$firebase(ref.child('validityDate')).$bind($scope, 'validityDate');
+			$firebase(ref.child('cn/address')).$bind($scope, 'cnAddress');
+			$firebase(ref.child('cn/artificialPerson')).$bind($scope, 'cnArtificialPerson');
+			$firebase(ref.child('cn/company')).$bind($scope, 'cnCompany');
+			$firebase(ref.child('cn/presentationDate')).$bind($scope, 'cnPresentationDate');
+			$firebase(ref.child('en/address')).$bind($scope, 'enAddress');
+			$firebase(ref.child('en/artificialPerson')).$bind($scope, 'enArtificialPerson');
+			$firebase(ref.child('en/company')).$bind($scope, 'enCompany');
+			$firebase(ref.child('en/presentationDate')).$bind($scope, 'enPresentationDate');
 
 			//delete
-			$scope.delete = function(){
-				ref.remove(function(){
+			$scope.delete = function() {
+				ref.remove(function() {
+					//doesn't work
 					$location.path('#/pco/list');
+					$scope.$apply();
 				});
 			}
 		}

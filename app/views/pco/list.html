@@ -48,8 +48,8 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat='(key, pco) in list | orderBy:order:reverse | search:q' >
-				<td><a href="#/pco/{{key}}">{{ pco._id }}</a></td>
+			<tr ng-repeat=' pco in pcoList | orderByPriority | orderBy:order:reverse | filter:q' >
+				<td><a href="#/pco/{{pco.$id}}">{{ pco._id }}</a></td>
 				<td>{{ pco.grade}}</td>
 				<td>{{ pco[language].company }}</td>
 				<td>{{ pco[language].address }}</td>
