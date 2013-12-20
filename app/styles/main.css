@@ -85,8 +85,8 @@ body {
 /*print styles*/
 #print {
   position: absolute;
-  width: 1080px;
-  height: 800px;
+  width: 297mm;
+  height: 210mm;
   left: 0px;
   top: 0px;
 }
@@ -107,7 +107,7 @@ body {
   position : relative ;
   background : rgba(75,75,75,0.1) ;
   width : 145mm ;
-  height : 200mm ;
+  height : 210mm ;
   float : left ;
   font-family : Courier ;
 }
@@ -117,7 +117,7 @@ body {
   position : relative ;
   background : rgba(75,75,75,0.2) ;
   width : 140mm ;
-  height : 200mm ;
+  height : 210mm ;
   float : left ;
   font-family : Courier ;
 }
