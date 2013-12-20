@@ -94,10 +94,10 @@ module.exports = function (grunt) {
         jshintrc: '.jshintrc',
         reporter: require('jshint-stylish')
       },
-      all: [
-        'Gruntfile.js',
-        '<%= yeoman.app %>/scripts/{,*/}*.js'
-      ],
+      //all: [
+      //  'Gruntfile.js',
+      //  '<%= yeoman.app %>/scripts/{,*/}*.js'
+      //],
       test: {
         options: {
           jshintrc: 'test/.jshintrc'
@@ -209,7 +209,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>',
-          src: ['*.html', 'views/*.html'],
+          src: ['*.html', 'views/*.html', 'views/*/*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }

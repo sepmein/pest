@@ -23,6 +23,10 @@ app.config(['$routeProvider',
 				templateUrl: 'views/pco/new.html',
 				authRequired: true
 			})
+			.when('/pco/print', {
+				templateUrl: 'views/pco/print.html',
+				authRequired: true
+			})
 			.when('/pco/:index', {
 				templateUrl: 'views/pco/view.html',
 				authRequired: true
@@ -42,7 +46,7 @@ app.config(['$routeProvider',
 		$rootScope.auth = $firebaseAuth(new Firebase(FBURL), {
 			simple: true,
 			path: '/login',
-			callback : function(){
+			callback: function() {
 				//null for now
 			}
 		});

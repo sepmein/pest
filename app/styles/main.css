@@ -81,3 +81,155 @@ body {
 .container {
   margin-top: 50px;
 }
+
+/*print styles*/
+#print {
+  position: absolute;
+  width: 1080px;
+  height: 800px;
+  left: 0px;
+  top: 0px;
+}
+#print * {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  line-height: 1;
+}
+#print div.noprint {
+  position : absolute ;
+  z-index : 1;
+  opacity : 0.5;
+}
+
+#print #CN{
+  display : block ;
+  position : relative ;
+  background : rgba(75,75,75,0.1) ;
+  width : 145mm ;
+  height : 200mm ;
+  float : left ;
+  font-family : Courier ;
+}
+
+#print #EN{
+  display : block ;
+  position : relative ;
+  background : rgba(75,75,75,0.2) ;
+  width : 140mm ;
+  height : 200mm ;
+  float : left ;
+  font-family : Courier ;
+}
+
+#print #CN>div,#EN>div{
+  display : block ;
+  position : absolute ;
+
+}
+
+#print #CN .gradeB{
+  font-size : 1.5em ;
+  font-weight : bold;
+  font-family : Georgia;
+  top : 213px ;
+  left : 300px ;
+}
+
+#print #CN .company {
+  top : 265px ;
+  left : 170px ;
+}
+
+#print #CN .address {
+  top : 328px ;
+  left : 170px ;
+}
+
+#print #CN .artificialPerson {
+  top : 296px ;
+  left : 170px ;
+}
+
+#print #CN ._id {
+  top : 183px ;
+  left : 442px ;
+}
+#print #CN .gradeS {
+  top : 410px ;
+  left : 195px ;
+}
+#print #CN .validityDate {
+  top : 460px ;
+  left : 195px ;
+}
+#print #CN .presentationDate {
+  top : 562px ;
+  left : 321px ;
+}
+
+/*en*/
+#print #EN .who,#EN .legalR,#EN .address{
+  font-size : 12px;
+}
+
+#print #EN .gradeB{
+  font-size : 1.5em ;
+  font-weight : bold;
+  font-family : Georgia;
+  top : 215px ;
+  left : 270px ;
+}
+
+#print #EN .company {
+  top : 275px ;
+  left : 190px ;
+}
+
+#print #EN .address {
+  top : 335px ;
+  left : 122px ;
+  width : 375px ;
+}
+
+#print #EN .artificialPerson {
+  top : 304px ;
+  left : 170px ;
+}
+
+#print #EN ._id {
+  top : 186px ;
+  left : 375px ;
+}
+#print #EN .gradeS {
+  top : 410px ;
+  left : 195px ;
+}
+#print #EN .validityDate {
+  top : 468px ;
+  left : 180px ;
+}
+#print #EN .presentationDate {
+  top : 562px ;
+  left : 290px ;
+}
+
+@media print {
+  .noprint {
+    display : none ;
+  }
+  .container {
+    margin: 0;
+    padding: 0;
+  }
+  .container *{
+    margin: 0;
+    padding: 0;
+  }
+  #print section#CN,section#EN {
+    /* background : none ; */
+    left : -50px;
+    top : -50px;    
+  }
+
+}

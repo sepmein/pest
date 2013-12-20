@@ -11,19 +11,22 @@
 		</div>
 		<!-- Button trigger modal -->
 		<a href="#/pco/new" class="btn btn-success">
-			新增PCO
+			<span class="glyphicon glyphicon-plus"></span> 新增
 		</a>
 		<button type="button" class='btn' ng-click="translation()">
-			中/en
+			<span class="glyphicon glyphicon-globe"></span> 中/en
 		</button>
-		<button type="button" class="btn btn-default">
-		  <span class="glyphicon glyphicon-print"></span> 打印
-		</button>
+		<a href="#/pco/print" class="btn btn-default">
+		  <span class="glyphicon glyphicon-print"></span> 打印<span class="badge">{{printCount()}}</span>
+		</a>
 	</form>
 
 	<table class='table'>
 		<thead>
 			<tr>
+				<th>
+					<input type="checkbox" ng-click="triStateSelect()" ng-model="triStateSelectBox">
+				</th>
 				<th>
 					<a href="" ng-click=" order = '_id' ; reverse = !reverse">#</a>
 				</th>
@@ -49,6 +52,7 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat=' pco in pcoList | orderByPriority | orderBy:order:reverse | filter:q' >
+				<td><input type="checkbox" ng-model="printList[pco.$id]">{{printList[pco.$id]}}</td>
 				<td><a href="#/pco/{{pco.$id}}">{{ pco._id }}</a></td>
 				<td>{{ pco.grade}}</td>
 				<td>{{ pco[language].company }}</td>
