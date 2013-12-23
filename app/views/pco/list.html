@@ -13,11 +13,11 @@
 		<a href="#/pco/new" class="btn btn-success">
 			<span class="glyphicon glyphicon-plus"></span> 新增
 		</a>
-		<button type="button" class='btn' ng-click="translation()">
+		<button type="button" class='btn btn-default' ng-click="translation()">
 			<span class="glyphicon glyphicon-globe"></span> 中/en
 		</button>
-		<a href="#/pco/print" class="btn btn-default">
-		  <span class="glyphicon glyphicon-print"></span> 打印<span class="badge">{{printCount()}}</span>
+		<a href="#/pco/print" class="btn btn-primary">
+		  <span class="glyphicon glyphicon-print"></span> 打印 <span class="badge">{{printCount()}}</span>
 		</a>
 	</form>
 
@@ -25,7 +25,7 @@
 		<thead>
 			<tr>
 				<th>
-					<input type="checkbox" ng-click="triStateSelect()" ng-model="triStateSelectBox">
+					<a href="" ng-click="selectAll()">全选</a>/<a href="" ng-click="deSelectAll()">全不选</a>
 				</th>
 				<th>
 					<a href="" ng-click=" order = '_id' ; reverse = !reverse">#</a>
@@ -51,8 +51,8 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat=' pco in pcoList | orderByPriority | orderBy:order:reverse | filter:q' >
-				<td><input type="checkbox" ng-model="printList[pco.$id]">{{printList[pco.$id]}}</td>
+			<tr ng-repeat=' pco in filteredArray = (pcoList | orderByPriority | orderBy:order:reverse | filter:q)' >
+				<td><input type="checkbox" ng-model="printList[pco.$id]"></td>
 				<td><a href="#/pco/{{pco.$id}}">{{ pco._id }}</a></td>
 				<td>{{ pco.grade}}</td>
 				<td>{{ pco[language].company }}</td>
