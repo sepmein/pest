@@ -5,11 +5,10 @@
 	<br/>
 	
 	<form class="form-inline" role="form">
-		<div class="form-group">
+		<div class="form-group col-xs-4">
 			<label for="searchBar" class="sr-only">Search</label>
 			<input type="text" class="form-control" id="searchBar" ng-model="q" placeholder="搜索">
 		</div>
-		<!-- Button trigger modal -->
 		<a href="#/pco/new" class="btn btn-success">
 			<span class="glyphicon glyphicon-plus"></span> 新增
 		</a>
@@ -24,13 +23,13 @@
 	<table class='table'>
 		<thead>
 			<tr>
-				<th>
-					<a href="" ng-click="selectAll()">全选</a>/<a href="" ng-click="deSelectAll()">全不选</a>
+				<th class="selectUnselect">
+					<a href="" ng-click="selectAll()"><i class="fa fa-plus-square-o"></i></a>/<a href="" ng-click="deSelectAll()"><i class="fa fa-minus-square-o"></i></a>
 				</th>
 				<th>
 					<a href="" ng-click=" order = '_id' ; reverse = !reverse">编号</a><span class="glyphicon glyphicon-sort"></span>
 				</th>
-				<th>
+				<th class="grade">
 					<a href="" ng-click=" order = 'grade' ; reverse = !reverse">{{ (language==='cn')?('等级'):('Grade') }}</a><span class="glyphicon glyphicon-sort"></span>
 				</th>
 				<th>

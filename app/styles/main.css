@@ -235,7 +235,15 @@ body {
 }
 
 /* list */
-#pco>.table th:hover .glyphicon-sort{
+#pco .selectUnselect {
+  width: 42px;
+}
+
+#pco .grade {
+  width: 60px;
+}
+
+#pco>.table th:hover .glyphicon-sort {
   display: inline;
 }
 
