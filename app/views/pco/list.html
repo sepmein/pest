@@ -1,4 +1,4 @@
-<div ng-controller="pcoApp.controllers.list">
+<div ng-controller="pcoApp.controllers.list" id="pco">
 	<!-- 
 		<div class="alert" ng-class='messageType' ng-show="isShown">{{message}}</div>
 	-->
@@ -28,25 +28,25 @@
 					<a href="" ng-click="selectAll()">全选</a>/<a href="" ng-click="deSelectAll()">全不选</a>
 				</th>
 				<th>
-					<a href="" ng-click=" order = '_id' ; reverse = !reverse">#</a>
+					<a href="" ng-click=" order = '_id' ; reverse = !reverse">编号</a><span class="glyphicon glyphicon-sort"></span>
 				</th>
 				<th>
-					<a href="" ng-click=" order = 'grade' ; reverse = !reverse">{{ (language==='cn')?('等级'):('Grade') }}</a>
+					<a href="" ng-click=" order = 'grade' ; reverse = !reverse">{{ (language==='cn')?('等级'):('Grade') }}</a><span class="glyphicon glyphicon-sort"></span>
 				</th>
 				<th>
-					<a href="" ng-click=" order = language + '.company' ; reverse = !reverse">{{ (language==='cn')?('单位'):('Company') }}</a>
+					<a href="" ng-click=" order = language + '.company' ; reverse = !reverse">{{ (language==='cn')?('单位'):('Company') }}</a><span class="glyphicon glyphicon-sort"></span>
 				</th>
 				<th>
-					<a href="" ng-click=" order = language + '.address' ; reverse = !reverse">{{ (language==='cn')?('地址'):('Address') }}</a>
+					<a href="" ng-click=" order = language + '.address' ; reverse = !reverse">{{ (language==='cn')?('地址'):('Address') }}</a><span class="glyphicon glyphicon-sort"></span>
 				</th>
 				<th>
-					<a href="" ng-click=" order = language + '.artificialPerson' ; reverse = !reverse">{{ (language==='cn')?('法人'):('Artificial Person') }}</a>
+					<a href="" ng-click=" order = language + '.artificialPerson' ; reverse = !reverse">{{ (language==='cn')?('法人'):('Artificial Person') }}</a><span class="glyphicon glyphicon-sort"></span>
 				</th>
 				<th>
-					<a href="" ng-click=" order = language + '.presentationDate' ; reverse = !reverse">{{ (language==='cn')?('颁发日期'):('Presentation Date') }}</a>
+					<a href="" ng-click=" order = language + '.presentationDate' ; reverse = !reverse">{{ (language==='cn')?('颁发日期'):('Presentation Date') }}</a><span class="glyphicon glyphicon-sort"></span>
 				</th>
 				<th>
-					<a href="" ng-click=" order = validityDate ; reverse = !reverse">{{ (language==='cn')?('有效期'):('Validation Date') }}</a>
+					<a href="" ng-click=" order = validityDate ; reverse = !reverse">{{ (language==='cn')?('有效期'):('Validation Date') }}</a><span class="glyphicon glyphicon-sort"></span>
 				</th>
 			</tr>
 		</thead>

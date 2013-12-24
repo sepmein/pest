@@ -233,3 +233,12 @@ body {
   }
 
 }
+
+/* list */
+#pco>.table th:hover .glyphicon-sort{
+  display: inline;
+}
+
+#pco>.table th>.glyphicon-sort {
+  display: none;
+}
