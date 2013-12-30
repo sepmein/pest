@@ -27,6 +27,6 @@ angular.module('pcoApp')
 					$location.path('#/pco/list');
 					$scope.$apply();
 				});
-			}
+			};
 		}
 	]);
