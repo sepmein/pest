@@ -40,7 +40,6 @@ app.config(['$routeProvider',
 //firebase url as FBURL
 .constant('FBURL', 'https://pest.firebaseio.com')
 
-//TODO: understand angularFireAuth services
 .run(['$firebaseAuth', 'FBURL', '$rootScope',
 	function($firebaseAuth, FBURL, $rootScope) {
 		$rootScope.auth = $firebaseAuth(new Firebase(FBURL), {

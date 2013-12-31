@@ -1,8 +1,8 @@
 {
   "name": "pco",
-  "version": "0.0.0",
+  "version": "0.3.0",
   "dependencies": {
-    "bootstrap": "~3.0.2",
+    "bootstrap": "~3.0.3",
     "font-awesome": "~4.0.3",
     "angular": "~1.2.0",
     "json3": "~3.2.4",

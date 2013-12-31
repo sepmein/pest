@@ -2,6 +2,6 @@
 
 #! /bin/bash
 
-###grunt --force
+grunt
 cd dist
 aws s3 sync . s3://pestsh

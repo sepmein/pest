@@ -11,5 +11,9 @@ angular.module('pcoApp')
 					$scope.toPrint[key] = $firebase(FireRefs.pcoList().child(key));
 				}
 			}
+
+			$scope.noneSelectWarning = function(){
+				
+			}
 		}
 	]);
