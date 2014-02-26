@@ -83,12 +83,16 @@ body {
 }
 
 /*print styles*/
-#print {
-  position: absolute;
-  width: 297mm;
-  height: 210mm;
-  left: 0px;
+#printContainer {
+ position: absolute;
+  margin: 0;
+  padding: 0;
+    left: 0px;
   top: 0px;
+}
+#print {
+  width: 297mm;
+  height: 793px;
 }
 #print * {
   margin: 0;
@@ -107,7 +111,7 @@ body {
   position : relative ;
   background : rgba(75,75,75,0.1) ;
   width : 145mm ;
-  height : 210mm ;
+  height : 793px ;
   float : left ;
   font-family : Courier ;
 }
@@ -117,7 +121,7 @@ body {
   position : relative ;
   background : rgba(75,75,75,0.2) ;
   width : 140mm ;
-  height : 210mm ;
+  height : 793px ;
   float : left ;
   font-family : Courier ;
 }
@@ -125,47 +129,46 @@ body {
 #print #CN>div,#EN>div{
   display : block ;
   position : absolute ;
-
 }
 
 #print #CN .gradeB{
   font-size : 1.5em ;
   font-weight : bold;
   font-family : Georgia;
-  top : 213px ;
+  top : 205px ;
   left : 300px ;
 }
 
 #print #CN .company {
-  top : 265px ;
+  top : 257px ;
   left : 170px ;
 }
 
 #print #CN .address {
-  top : 328px ;
+  top : 321px ;
   left : 170px ;
 }
 
 #print #CN .artificialPerson {
-  top : 296px ;
+  top : 289px ;
   left : 170px ;
 }
 
 #print #CN ._id {
-  top : 183px ;
+  top : 170px ;
   left : 442px ;
 }
 #print #CN .gradeS {
-  top : 410px ;
+  top : 400px ;
   left : 195px ;
 }
 #print #CN .validityDate {
-  top : 460px ;
+  top : 453px ;
   left : 195px ;
 }
 #print #CN .presentationDate {
   top : 562px ;
-  left : 321px ;
+  left : 354px ;
 }
 
 /*en*/
@@ -177,40 +180,37 @@ body {
   font-size : 1.5em ;
   font-weight : bold;
   font-family : Georgia;
-  top : 215px ;
+  top : 205px ;
   left : 270px ;
 }
 
 #print #EN .company {
-  top : 275px ;
+  top : 260px ;
   left : 190px ;
 }
 
 #print #EN .address {
-  top : 335px ;
+  top : 323px ;
   left : 122px ;
   width : 375px ;
 }
 
 #print #EN .artificialPerson {
-  top : 304px ;
+  top : 291px ;
   left : 170px ;
 }
 
 #print #EN ._id {
-  top : 186px ;
+  top : 173px ;
   left : 375px ;
 }
-#print #EN .gradeS {
-  top : 410px ;
-  left : 195px ;
-}
+
 #print #EN .validityDate {
-  top : 468px ;
+  top : 460px ;
   left : 180px ;
 }
 #print #EN .presentationDate {
-  top : 562px ;
+  top : 558px ;
   left : 290px ;
 }
 
@@ -228,8 +228,9 @@ body {
   }
   #print section#CN,section#EN {
     /* background : none ; */
-    left : -50px;
-    top : -50px;    
+/*     left : -50px;
+  top : -50px;    
+   */  
   }
 
 }
