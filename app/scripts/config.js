@@ -5,29 +5,25 @@ angular.module('pcoApp.config', []);
 app.config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider
-			.when('/', {
-				templateUrl: 'views/main.html',
-				controller: 'pcoApp.controllers.main'
-			})
 			.when('/login', {
 				templateUrl: 'views/auth.html'
 			})
 			.when('/signup', {
 				templateUrl: 'views/auth.html'
 			})
-			.when('/pco', {
+			.when('/', {
 				templateUrl: 'views/pco/list.html',
 				authRequired: true
 			})
-			.when('/pco/new', {
+			.when('/new', {
 				templateUrl: 'views/pco/new.html',
 				authRequired: true
 			})
-			.when('/pco/print', {
+			.when('/print', {
 				templateUrl: 'views/pco/print.html',
 				authRequired: true
 			})
-			.when('/pco/:index', {
+			.when('/:index', {
 				templateUrl: 'views/pco/view.html',
 				authRequired: true
 			})
