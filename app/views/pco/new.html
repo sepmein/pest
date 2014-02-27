@@ -1,5 +1,5 @@
 <div ng-controller="pcoApp.controllers.new">
-	<a class="btn btn-primary" href="#/pco"><span class="glyphicon glyphicon-chevron-left"></span>PCO列表</a>
+	<a class="btn btn-primary" href="#/"><span class="glyphicon glyphicon-chevron-left"></span>PCO列表</a>
 	<form class="form-horizontal" role="form">
 		<div class="form-group"><label class="col-sm-2 control-label">公司</label>
 			<div class="col-sm-10">
@@ -80,8 +80,8 @@
 	</form>
 
 	<button id="newBtn" ng-click="new()" class="btn btn-success btn-lg" data-loading-text="正在新建">{{ newBtnState }}</button>
-	<a href="#/pco/new" class="btn btn-lg" ng-show='added'>继续新建</a>
-	<a href="#/pco/{{uniquePushId}}" class="btn btn-lg" ng-show='added'>查看已新建内容</a>
-	<a href="#/pco/list" class="btn btn-lg" ng-show='added'>返回列表</a>
+	<a href="#/new" class="btn btn-lg" ng-show='added'>继续新建</a>
+	<a href="#/{{uniquePushId}}" class="btn btn-lg" ng-show='added'>查看已新建内容</a>
+	<a href="#/list" class="btn btn-lg" ng-show='added'>返回列表</a>
 
 </div>

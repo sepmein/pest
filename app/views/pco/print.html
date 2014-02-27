@@ -1,6 +1,5 @@
-<div ng-controller="pcoApp.controllers.print" id="print">
-	<div class="noprint" ng-show=""><i class="fa fa-spinner fa-spin fa-5x"></i></div>
-	<div ng-repeat="pco in toPrint">
+<div ng-controller="pcoApp.controllers.print" id="printContainer">
+	<div ng-repeat="pco in toPrint" id="print">
 		<section id="CN">
 			<div class="gradeB">{{pco.grade}}</div>
 			<div class="company">{{pco.cn.company}}</div>
@@ -17,7 +16,6 @@
 			<div class="address">{{pco.en.address}}</div>
 			<div class="artificialPerson">{{pco.en.artificialPerson}}</div>
 			<div class="_id">{{pco._id}}</div>
-			<div class="gradeS">{{pco.grade}}</div>
 			<div class="validityDate">{{pco.validityDate}}</div>
 			<div class="presentationDate">{{pco.en.presentationDate}}</div>
 		</section>

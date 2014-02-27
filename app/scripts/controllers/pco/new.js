@@ -13,16 +13,16 @@ angular.module('pcoApp')
 
 				//construct data
 				$scope.newPco = {
-					"_id": $scope._id,
-					"grade": $scope.grade,
-					"validityDate": $scope.validityDate,
-					"cn": {
+					'_id': $scope._id,
+					'grade': $scope.grade,
+					'validityDate': $scope.validityDate,
+					'cn': {
 						address: $scope.cnAddress,
 						artificialPerson: $scope.cnArtificialPerson,
 						company: $scope.cnCompany,
 						presentationDate: $scope.cnPresentationDate,
 					},
-					"en": {
+					'en': {
 						address: $scope.enAddress,
 						artificialPerson: $scope.enArtificialPerson,
 						company: $scope.enCompany,
@@ -39,7 +39,9 @@ angular.module('pcoApp')
 					//show the next step functions
 					$scope.added = true;
 					//safe apply
-					if(!$scope.$$phase) $scope.$apply();
+					if (!$scope.$$phase) {
+						$scope.$apply();
+					}
 				});
 			};
 		}

@@ -11,7 +11,7 @@ angular.module('pcoApp')
 
 			//refresh FilteredArray when search query changes
 			//use $filter service to call filters in the controller
-			$scope.$watch('$scope.q', function(newVal, oldVal) {
+			$scope.$watch('$scope.q', function(newVal) {
 				$scope.filteredArray = $filter('filter')($filter('orderByPriority')($scope.pcoList), newVal);
 			});
 
@@ -37,14 +37,14 @@ angular.module('pcoApp')
 			$scope.selectAll = function() {
 				for (var i = $scope.filteredArray.length - 1; i >= 0; i--) {
 					$scope.printList[$scope.filteredArray[i].$id] = true;
-				};
+				}
 				console.log($scope.filteredArray);
 			};
 
 			$scope.deSelectAll = function() {
 				for (var i = $scope.filteredArray.length - 1; i >= 0; i--) {
 					$scope.printList[$scope.filteredArray[i].$id] = false;
-				};
+				}
 			};
 
 			//中英文切换

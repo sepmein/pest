@@ -16,6 +16,7 @@ body {
 .header {
   border-bottom: 1px solid #e5e5e5;
 }
+
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
@@ -32,7 +33,7 @@ body {
 }
 
 /* Customize container */
-@media (min-width: 768px) {
+@media (min-width:768px) {
   .container {
     max-width: 1080px;
   }
@@ -59,8 +60,8 @@ body {
   margin-top: 28px;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+/* Responsive:Portrait tablets and up */
+@media screen and (min-width:768px) {
   /* Remove the padding we set earlier */
   .header,
   .marketing,
@@ -68,27 +69,32 @@ body {
     padding-left: 0;
     padding-right: 0;
   }
+  
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
   }
+  
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
   }
 }
-
 .container {
   margin-top: 50px;
 }
 
-/*print styles*/
-#print {
+/* print styles */
+#printContainer {
   position: absolute;
-  width: 297mm;
-  height: 210mm;
+  margin: 0;
+  padding: 0;
   left: 0px;
   top: 0px;
+}
+#print {
+  width: 297mm;
+  height: 793px;
 }
 #print * {
   margin: 0;
@@ -97,156 +103,142 @@ body {
   line-height: 1;
 }
 #print div.noprint {
-  position : absolute ;
-  z-index : 1;
-  opacity : 0.5;
+  position: absolute;
+  z-index: 1;
+  opacity: 0.5;
 }
-
-#print #CN{
-  display : block ;
-  position : relative ;
-  background : rgba(75,75,75,0.1) ;
-  width : 145mm ;
-  height : 210mm ;
-  float : left ;
-  font-family : Courier ;
+#print #CN {
+  display: block;
+  position: relative;
+  background: rgba(75, 75, 75, 0.1);
+  width: 145mm;
+  height: 793px;
+  float: left;
+  font-family: Courier;
 }
-
-#print #EN{
-  display : block ;
-  position : relative ;
-  background : rgba(75,75,75,0.2) ;
-  width : 140mm ;
-  height : 210mm ;
-  float : left ;
-  font-family : Courier ;
+#print #CN * {
+  font-size: 14px;
 }
-
-#print #CN>div,#EN>div{
-  display : block ;
-  position : absolute ;
-
+#print #EN {
+  display: block;
+  position: relative;
+  background: rgba(75, 75, 75, 0.2);
+  width: 140mm;
+  height: 793px;
+  float: left;
+  font-family: Courier;
 }
-
-#print #CN .gradeB{
-  font-size : 1.5em ;
-  font-weight : bold;
-  font-family : Georgia;
-  top : 213px ;
-  left : 300px ;
+#print #CN>div,
+#EN>div {
+  display: block;
+  position: absolute;
 }
-
+#print #CN .gradeB {
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: Georgia;
+  top: 205px;
+  left: 300px;
+}
 #print #CN .company {
-  top : 265px ;
-  left : 170px ;
+  top: 257px;
+  left: 170px;
 }
-
 #print #CN .address {
-  top : 328px ;
-  left : 170px ;
+  top: 321px;
+  left: 170px;
 }
-
 #print #CN .artificialPerson {
-  top : 296px ;
-  left : 170px ;
+  top: 289px;
+  left: 170px;
 }
-
 #print #CN ._id {
-  top : 183px ;
-  left : 442px ;
+  top: 170px;
+  left: 442px;
 }
 #print #CN .gradeS {
-  top : 410px ;
-  left : 195px ;
+  top: 400px;
+  left: 195px;
 }
 #print #CN .validityDate {
-  top : 460px ;
-  left : 195px ;
+  top: 453px;
+  left: 195px;
 }
 #print #CN .presentationDate {
-  top : 562px ;
-  left : 321px ;
+  top: 562px;
+  left: 354px;
 }
 
-/*en*/
-#print #EN .who,#EN .legalR,#EN .address{
-  font-size : 12px;
+/* en */
+#print #EN .who,
+#EN .legalR,
+#EN .address {
+  font-size: 12px;
 }
-
-#print #EN .gradeB{
-  font-size : 1.5em ;
-  font-weight : bold;
-  font-family : Georgia;
-  top : 215px ;
-  left : 270px ;
+#print #EN .gradeB {
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: Georgia;
+  top: 205px;
+  left: 270px;
 }
-
 #print #EN .company {
-  top : 275px ;
-  left : 190px ;
+  top: 260px;
+  left: 190px;
 }
-
 #print #EN .address {
-  top : 335px ;
-  left : 122px ;
-  width : 375px ;
+  top: 323px;
+  left: 122px;
+  width: 375px;
 }
-
 #print #EN .artificialPerson {
-  top : 304px ;
-  left : 170px ;
+  top: 291px;
+  left: 170px;
 }
-
 #print #EN ._id {
-  top : 186px ;
-  left : 375px ;
-}
-#print #EN .gradeS {
-  top : 410px ;
-  left : 195px ;
+  top: 173px;
+  left: 375px;
 }
 #print #EN .validityDate {
-  top : 468px ;
-  left : 180px ;
+  top: 460px;
+  left: 180px;
 }
 #print #EN .presentationDate {
-  top : 562px ;
-  left : 290px ;
+  top: 558px;
+  left: 290px;
 }
-
 @media print {
   .noprint {
-    display : none ;
+    display: none;
   }
   .container {
     margin: 0;
     padding: 0;
   }
-  .container *{
+  .container * {
     margin: 0;
     padding: 0;
   }
-  #print section#CN,section#EN {
-    /* background : none ; */
-    left : -50px;
-    top : -50px;    
+  #print section#CN,
+  section#EN {
+    /* background: none;
+    */
+    /* left: -50px;
+    top: -50px;
+    */
   }
-
 }
 
 /* list */
 #pco .selectUnselect {
   width: 42px;
 }
-
 #pco .grade {
   width: 60px;
 }
-
 #pco>.table th:hover .glyphicon-sort {
   display: inline;
 }
-
 #pco>.table th>.glyphicon-sort {
   display: none;
 }

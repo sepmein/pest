@@ -9,13 +9,13 @@
 			<label for="searchBar" class="sr-only">Search</label>
 			<input type="text" class="form-control" id="searchBar" ng-model="q" placeholder="搜索">
 		</div>
-		<a href="#/pco/new" class="btn btn-success">
+		<a href="#/new" class="btn btn-success">
 			<span class="glyphicon glyphicon-plus"></span> 新增
 		</a>
 		<button type="button" class='btn btn-default' ng-click="translation()">
 			<span class="glyphicon glyphicon-globe"></span> 中/en
 		</button>
-		<a href="#/pco/print" class="btn btn-primary">
+		<a href="#/print" class="btn btn-primary">
 		  <span class="glyphicon glyphicon-print"></span> 打印 <span class="badge">{{printCount()}}</span>
 		</a>
 	</form>
@@ -52,7 +52,7 @@
 		<tbody>
 			<tr ng-repeat=' pco in filteredArray = (pcoList | orderByPriority | orderBy:order:reverse | filter:q)' >
 				<td><input type="checkbox" ng-model="printList[pco.$id]"></td>
-				<td><a href="#/pco/{{pco.$id}}">{{ pco._id }}</a></td>
+				<td><a href="#/{{pco.$id}}">{{ pco._id }}</a></td>
 				<td>{{ pco.grade}}</td>
 				<td>{{ pco[language].company }}</td>
 				<td>{{ pco[language].address }}</td>
