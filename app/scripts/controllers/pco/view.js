@@ -2,9 +2,10 @@
 
 angular.module('pcoApp')
 	.controller('pcoApp.controllers.view', ['$scope', '$routeParams', '$firebase', 'FireRefs', '$location',
-		function($scope, $routeParams, $firebase, FireRefs, $location) {
-			var index = $routeParams.index;
-			var ref = FireRefs.pcoList().child(index);
+		function($scope, $routeParams, $firebase, FireRefs) {
+			var index = $routeParams.index,
+				ref = FireRefs.pcoList().child(index),
+				it = $firebase(ref);
 
 			//binding to firebase
 			$firebase(ref.parent()).$bind($scope, 'pcos');
@@ -20,13 +21,17 @@ angular.module('pcoApp')
 			$firebase(ref.child('en/company')).$bind($scope, 'enCompany');
 			$firebase(ref.child('en/presentationDate')).$bind($scope, 'enPresentationDate');
 
+			$scope.deleteLock = true;
+			$scope.deleteMsg = '删除';
+			$('#deleteBtn').tooltip();
 			//delete
 			$scope.delete = function() {
-				ref.remove(function() {
-					//doesn't work
-					$location.path('#/pco/list');
-					$scope.$apply();
-				});
+				if (!$scope.deleteLock) {
+					FireRefs.delete(it);
+				} else {
+					$scope.deleteMsg = '确认';
+					$scope.deleteLock = !$scope.deleteLock;
+				}
 			};
 		}
 	]);

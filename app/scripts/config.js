@@ -36,14 +36,8 @@ app.config(['$routeProvider',
 //firebase url as FBURL
 .constant('FBURL', 'https://pest.firebaseio.com')
 
-.run(['$firebaseAuth', 'FBURL', '$rootScope',
-	function($firebaseAuth, FBURL, $rootScope) {
-		$rootScope.auth = $firebaseAuth(new Firebase(FBURL), {
-			simple: true,
-			path: '/login',
-			callback: function() {
-				//null for now
-			}
-		});
+.run(['$firebaseSimpleLogin', 'FBURL', '$rootScope',
+	function($firebaseSimpleLogin, FBURL, $rootScope) {
+		$rootScope.auth = $firebaseSimpleLogin(new Firebase(FBURL));
 	}
 ]);

@@ -3,7 +3,7 @@
 angular.module('pcoApp')
 	.controller('pcoApp.controllers.authentication', ['$scope', 'authentication', '$location',
 		function($scope, authentication, $location) {
-			$scope.$on('$firebaseAuth:login', function() {
+			$scope.$on('$firebaseSimpleLogin:login', function() {
 				$location.path('/');
 			});
 

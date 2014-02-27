@@ -1,106 +1,101 @@
 <div ng-controller="pcoApp.controllers.view">
-	<a class="btn btn-primary" href="#/pco"><span class="glyphicon glyphicon-chevron-left"></span>PCO列表</a>
+    <a class="btn btn-primary" href="#/">
+        <span class="glyphicon glyphicon-chevron-left"></span>PCO列表</a>
 
-	<!-- Button trigger modal -->
-	<button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
-		<span class="glyphicon glyphicon-trash"></span>删除
-	</button>
-	<!-- Modal -->
-	<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="myModalLabel">⚠警告</h4>
-				</div>
-				<div class="modal-body">
-					<p>你将删除的数据编号为：［{{ _id }}］，公司名：{{cnCompany}}。</p>
-					<p>该操作为不可逆，请再次确认后进行操作</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-					<button type="button" class="btn btn-danger" ng-click="delete()">删除</button>
-				</div>
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
+    <button ng-click='delete()' class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="注意：该操作不可逆" id="deleteBtn">
+        <span class="glyphicon glyphicon-trash"></span>{{deleteMsg}}
+    </button>
 
-	<form class="form-horizontal" role="form">
-		<div class="form-group"><label class="col-sm-2 control-label">公司</label>
-			<div class="col-sm-10">
-				<input ng-model="cnCompany" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">证书号</label>
-			<div class="col-sm-10">
-				<input ng-model="_id" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">等级</label>
-			<div class="col-sm-10">
-				<input ng-model="grade" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">地址</label>
-			<div class="col-sm-10">
-				<input ng-model="cnAddress" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">法人</label>
-			<div class="col-sm-10">
-				<input ng-model="cnArtificialPerson" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">有效期</label>
-			<div class="col-sm-10">
-				<input ng-model="validityDate" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">颁证日期</label>
-			<div class="col-sm-10">
-				<input ng-model="cnPresentationDate" class="form-control"></input>
-			</div>
-		</div>
-	</form>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<form class="form-horizontal" role="form">
-		<div class="form-group"><label class="col-sm-2 control-label">Company</label>
-			<div class="col-sm-10">
-				<input ng-model="enCompany" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">Certificate Number</label>
-			<div class="col-sm-10">
-				<input ng-model="_id" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">Grade</label>
-			<div class="col-sm-10">
-				<input ng-model="grade" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">Address</label>
-			<div class="col-sm-10">
-				<input ng-model="enAddress" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">Artificial Person</label>
-			<div class="col-sm-10">
-				<input ng-model="enArtificialPerson" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">Validity Date</label>
-			<div class="col-sm-10">
-				<input ng-model="validityDate" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">Presentation Date</label>
-			<div class="col-sm-10">
-				<input ng-model="enPresentationDate" class="form-control"></input>
-			</div>
-		</div>
-	</form>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">公司</label>
+            <div class="col-sm-10">
+                <input ng-model="cnCompany" class="form-control"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">证书号</label>
+            <div class="col-sm-10">
+                <input ng-model="_id" class="form-control"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">等级</label>
+            <div class="col-sm-10">
+                <input ng-model="grade" class="form-control"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">地址</label>
+            <div class="col-sm-10">
+                <input ng-model="cnAddress" class="form-control"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">法人</label>
+            <div class="col-sm-10">
+                <input ng-model="cnArtificialPerson" class="form-control"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">有效期</label>
+            <div class="col-sm-10">
+                <input ng-model="validityDate" class="form-control"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">颁证日期</label>
+            <div class="col-sm-10">
+                <input ng-model="cnPresentationDate" class="form-control"></input>
+            </div>
+        </div>
+    </form>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Company</label>
+            <div class="col-sm-10">
+                <input ng-model="enCompany" class="form-control"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Certificate Number</label>
+            <div class="col-sm-10">
+                <input ng-model="_id" class="form-control"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Grade</label>
+            <div class="col-sm-10">
+                <input ng-model="grade" class="form-control"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Address</label>
+            <div class="col-sm-10">
+                <input ng-model="enAddress" class="form-control"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Artificial Person</label>
+            <div class="col-sm-10">
+                <input ng-model="enArtificialPerson" class="form-control"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Validity Date</label>
+            <div class="col-sm-10">
+                <input ng-model="validityDate" class="form-control"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Presentation Date</label>
+            <div class="col-sm-10">
+                <input ng-model="enPresentationDate" class="form-control"></input>
+            </div>
+        </div>
+    </form>
 </div>

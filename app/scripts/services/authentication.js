@@ -2,9 +2,9 @@
 
 /*provide authentication services for pco app*/
 
-angular.module('pcoApp.services.authentication',[])
-	.factory('authentication', ['$firebaseAuth', 'FireRefs', '$rootScope',
-		function($firebaseAuth, FireRefs, $rootScope) {
+angular.module('pcoApp.services.authentication', [])
+	.factory('authentication', ['FireRefs', '$rootScope',
+		function(FireRefs, $rootScope) {
 			var auth = $rootScope.auth;
 
 			return {
@@ -13,8 +13,6 @@ angular.module('pcoApp.services.authentication',[])
 						email: email,
 						password: password,
 						rememberMe: rememberMe
-					}).then(function(user){
-						auth.user = user;
 					});
 				},
 				logout: function() {

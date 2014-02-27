@@ -12,12 +12,15 @@
 		<a href="#/new" class="btn btn-success">
 			<span class="glyphicon glyphicon-plus"></span> 新增
 		</a>
-		<button type="button" class='btn btn-default' ng-click="translation()">
+		<button type="button" class="btn btn-default" ng-click="translation()">
 			<span class="glyphicon glyphicon-globe"></span> 中/en
 		</button>
 		<a href="#/print" class="btn btn-primary">
 		  <span class="glyphicon glyphicon-print"></span> 打印 <span class="badge">{{printCount()}}</span>
 		</a>
+		<button type="button" class="btn btn-danger pull-right" ng-click="delete()">
+			<span class="glyphicon glyphicon-trash"></span> 删除
+		</button>
 	</form>
 
 	<table class='table'>

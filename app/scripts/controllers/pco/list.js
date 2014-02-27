@@ -38,7 +38,6 @@ angular.module('pcoApp')
 				for (var i = $scope.filteredArray.length - 1; i >= 0; i--) {
 					$scope.printList[$scope.filteredArray[i].$id] = true;
 				}
-				console.log($scope.filteredArray);
 			};
 
 			$scope.deSelectAll = function() {
