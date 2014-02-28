@@ -1,87 +1,101 @@
 <div ng-controller="pcoApp.controllers.new">
-	<a class="btn btn-primary" href="#/"><span class="glyphicon glyphicon-chevron-left"></span>PCO列表</a>
-	<form class="form-horizontal" role="form">
-		<div class="form-group"><label class="col-sm-2 control-label">公司</label>
-			<div class="col-sm-10">
-				<input ng-model="cnCompany" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">证书号</label>
-			<div class="col-sm-10">
-				<input ng-model="_id" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">等级</label>
-			<div class="col-sm-10">
-				<input ng-model="grade" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">地址</label>
-			<div class="col-sm-10">
-				<input ng-model="cnAddress" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">法人</label>
-			<div class="col-sm-10">
-				<input ng-model="cnArtificialPerson" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">有效期</label>
-			<div class="col-sm-10">
-				<input ng-model="validityDate" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">颁证日期</label>
-			<div class="col-sm-10">
-				<input ng-model="cnPresentationDate" class="form-control"></input>
-			</div>
-		</div>
-	</form>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<form class="form-horizontal" role="form">
-		<div class="form-group"><label class="col-sm-2 control-label">Company</label>
-			<div class="col-sm-10">
-				<input ng-model="enCompany" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">Certificate Number</label>
-			<div class="col-sm-10">
-				<input ng-model="_id" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">Grade</label>
-			<div class="col-sm-10">
-				<input ng-model="grade" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">Address</label>
-			<div class="col-sm-10">
-				<input ng-model="enAddress" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">Artificial Person</label>
-			<div class="col-sm-10">
-				<input ng-model="enArtificialPerson" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">Validity Date</label>
-			<div class="col-sm-10">
-				<input ng-model="validityDate" class="form-control"></input>
-			</div>
-		</div>
-		<div class="form-group"><label class="col-sm-2 control-label">Presentation Date</label>
-			<div class="col-sm-10">
-				<input ng-model="enPresentationDate" class="form-control"></input>
-			</div>
-		</div>
-	</form>
+    <a class="btn btn-primary" href="#/">
+        <span class="glyphicon glyphicon-chevron-left"></span>PCO列表</a>
+    <form class="form-horizontal" role="form" name="newPcoForm">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">公司</label>
+            <div class="col-sm-10">
+                <input ng-model="cnCompany" class="form-control" required="true"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">证书号</label>
+            <div class="col-sm-10">
+                <input ng-model="_id" class="form-control" required="true"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">等级</label>
+            <div class="col-sm-10">
+                <input ng-model="grade" class="form-control" required="true"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">地址</label>
+            <div class="col-sm-10">
+                <input ng-model="cnAddress" class="form-control" required="true"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">法人</label>
+            <div class="col-sm-10">
+                <input ng-model="cnArtificialPerson" class="form-control" required="true"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">有效期</label>
+            <div class="col-sm-10">
+                <input ng-model="validityDate" class="form-control" required="true"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">颁证日期</label>
+            <div class="col-sm-10">
+                <input ng-model="cnPresentationDate" class="form-control" required="true"></input>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Company</label>
+            <div class="col-sm-10">
+                <input ng-model="enCompany" class="form-control" required="true"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Certificate Number</label>
+            <div class="col-sm-10">
+                <input ng-model="_id" class="form-control" required="true"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Grade</label>
+            <div class="col-sm-10">
+                <input ng-model="grade" class="form-control" required="true"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Address</label>
+            <div class="col-sm-10">
+                <input ng-model="enAddress" class="form-control" required="true"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Artificial Person</label>
+            <div class="col-sm-10">
+                <input ng-model="enArtificialPerson" class="form-control" required="true"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Validity Date</label>
+            <div class="col-sm-10">
+                <input ng-model="validityDate" class="form-control" required="true"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Presentation Date</label>
+            <div class="col-sm-10">
+                <input ng-model="enPresentationDate" class="form-control" required="true"></input>
+            </div>
+        </div>
+        <button id="newBtn" ng-click="new()" class="btn btn-success btn-lg" data-loading-text="正在新建" type="submit">{{ newBtnState }}</button>
+        <a class="btn btn-lg" ng-show="added" ng-click="clear()">继续新建</a>
+        <a href="#/{{uniquePushId}}" class="btn btn-lg" ng-show="added">查看已新建内容</a>
+        <a href="#/" class="btn btn-lg" ng-show="added">返回列表</a>
+    </form>
 
-	<button id="newBtn" ng-click="new()" class="btn btn-success btn-lg" data-loading-text="正在新建">{{ newBtnState }}</button>
-	<a href="#/new" class="btn btn-lg" ng-show='added'>继续新建</a>
-	<a href="#/{{uniquePushId}}" class="btn btn-lg" ng-show='added'>查看已新建内容</a>
-	<a href="#/list" class="btn btn-lg" ng-show='added'>返回列表</a>
+
 
 </div>

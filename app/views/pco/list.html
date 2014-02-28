@@ -4,7 +4,7 @@
 	-->
 	<br/>
 	
-	<form class="form-inline" role="form">
+	<form class="form-inline container" role="form">
 		<div class="form-group col-xs-4">
 			<label for="searchBar" class="sr-only">Search</label>
 			<input type="text" class="form-control" id="searchBar" ng-model="q" placeholder="搜索">
@@ -54,7 +54,7 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat=' pco in filteredArray = (pcoList | orderByPriority | orderBy:order:reverse | filter:q)' >
-				<td><input type="checkbox" ng-model="printList[pco.$id]"></td>
+				<td><input type="checkbox" ng-model="selected[pco.$id]"></td>
 				<td><a href="#/{{pco.$id}}">{{ pco._id }}</a></td>
 				<td>{{ pco.grade}}</td>
 				<td>{{ pco[language].company }}</td>

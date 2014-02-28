@@ -31,6 +31,7 @@ angular.module('pcoApp')
 				} else {
 					$scope.deleteMsg = '确认';
 					$scope.deleteLock = !$scope.deleteLock;
+					$('#deleteBtn').removeClass('btn-danger').addClass('btn-success');
 				}
 			};
 		}

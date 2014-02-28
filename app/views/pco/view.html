@@ -1,7 +1,10 @@
 <div ng-controller="pcoApp.controllers.view">
     <a class="btn btn-primary" href="#/">
-        <span class="glyphicon glyphicon-chevron-left"></span>PCO列表</a>
-
+        <span class="glyphicon glyphicon-chevron-left"></span>PCO列表
+    </a>
+    <a href="#/new" class="btn btn-success">
+        <span class="glyphicon glyphicon-plus"></span>新增
+    </a>
     <button ng-click='delete()' class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="注意：该操作不可逆" id="deleteBtn">
         <span class="glyphicon glyphicon-trash"></span>{{deleteMsg}}
     </button>

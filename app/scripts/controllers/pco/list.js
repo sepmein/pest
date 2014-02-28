@@ -5,7 +5,7 @@ angular.module('pcoApp')
 		function($scope, $firebase, FireRefs, $filter, print) {
 			/*init*/
 			$scope.pcoList = $firebase(FireRefs.pcoList());
-			$scope.printList = print.list;
+			$scope.selected = print.list;
 			$scope.language = 'cn';
 
 
@@ -17,8 +17,8 @@ angular.module('pcoApp')
 
 			$scope.printCount = function() {
 				var count = 0;
-				for (var key in $scope.printList) {
-					if ($scope.printList[key] === true) {
+				for (var key in $scope.selected) {
+					if ($scope.selected[key] === true) {
 						count++;
 					}
 				}
@@ -36,13 +36,13 @@ angular.module('pcoApp')
 			 */
 			$scope.selectAll = function() {
 				for (var i = $scope.filteredArray.length - 1; i >= 0; i--) {
-					$scope.printList[$scope.filteredArray[i].$id] = true;
+					$scope.selected[$scope.filteredArray[i].$id] = true;
 				}
 			};
 
 			$scope.deSelectAll = function() {
 				for (var i = $scope.filteredArray.length - 1; i >= 0; i--) {
-					$scope.printList[$scope.filteredArray[i].$id] = false;
+					$scope.selected[$scope.filteredArray[i].$id] = false;
 				}
 			};
 
@@ -50,6 +50,18 @@ angular.module('pcoApp')
 			$scope.translation = function() {
 				var l = $scope.language;
 				$scope.language = ((l === 'cn') ? 'en' : 'cn');
+			};
+
+			$scope.delete = function() {
+				var deleteList = [];
+				for (var key in $scope.selected) {
+					if ($scope.selected[key]) {
+						var deleteObjRef = FireRefs.pcoList().child(key);
+						deleteList.push($firebase(deleteObjRef));
+					}
+				}
+				FireRefs.delete(deleteList);
+				$scope.deSelectAll();
 			};
 
 		}
